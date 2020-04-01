@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Emloyee em1 = new Emloyee("asdf", 5, 7);
-        em1.getSalary();
         Emloyee em2 = new Emloyee("aasdfgdf", 3, 8);
         em2.changeRate();
         em2.getSalary();
@@ -16,7 +15,6 @@ public class Main {
         System.out.println(em1);
         System.out.println(em2);
         System.out.println(em3);
-        Emloyee.sum=em1.sal+em2.sal+em3.sal;
         Emloyee.printSum();
     }
 }

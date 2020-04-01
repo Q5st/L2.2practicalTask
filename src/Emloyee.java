@@ -6,6 +6,7 @@ public class Emloyee {
     private String name;
     private int rate;
     private int hour;
+    public static int sum=0;
     public  int sal;
 
     public Emloyee() {
@@ -20,6 +21,7 @@ public class Emloyee {
         this.name = name;
         this.rate = rate;
         this.hour = hour;
+        Emloyee.sum+=this.getSalary();
     }
 
     public String getName() {
@@ -46,8 +48,6 @@ public class Emloyee {
         this.hour = hour;
     }
 
-    public static int sum=0;
-
     public static void printSum() {System.out.println(sum);}
 
     public int getSalary() { sal=this.rate*this.hour;
@@ -58,14 +58,18 @@ public class Emloyee {
         return "Emloyee [Name=" + name + ", Hour=" + hour + ", Rate=" + rate + "]";
     }
     public int changeRate() {
+        Emloyee.sum-=this.getSalary();
         System.out.println("New rate:");
         Scanner scanner = new Scanner(System.in);
         int change = scanner.nextInt();
         this.rate = change;
+        Emloyee.sum+=getSalary();
         return this.rate;
     }
     public int getBonus() {
+        Emloyee.sum-=this.getSalary();
         this.rate*=1.1;
+        Emloyee.sum+=getSalary();
         return this.rate;
     }
 }
